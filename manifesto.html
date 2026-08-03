@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manifesto — Religare</title>
+  <meta name="description" content="Manifesto Religare: um gesto de respeito, reconexão, tolerância e lembrança daquilo que nos conecta." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="manifesto-page">
+  <header class="site-header">
+    <a class="brand" href="index.html#top" aria-label="Religare">
+      <img src="assets/marca_topo.png" width="181px" alt="Religare" />
+    </a>
+
+    <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Menu principal">
+      <a href="index.html">HOME</a>
+      <a href="#contato">CONTATO</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="manifesto-hero section-wide">
+      <img src="assets/topo_manifesto.png" alt="Ilustracao abstrata com sol, caminhos, montanhas e luzes convergindo para um centro comum." />
+    </section>
+
+    <article class="manifesto-content" aria-labelledby="manifesto-title">
+      <p class="section-label">manifesto</p>
+      <h2 id="manifesto-title" class="manifesto-title">Religare</h2>
+      <div class="arts-line" aria-hidden="true"></div>
+
+      <div class="manifesto-body">
+        <p>O mundo é antigo.<br>E a busca por sentido também.</p>
+
+        <p>Este nosso belo planeta já testemunhou incontáveis vidas humanas ao longo do tempo. Gente que por aqui plantou, colheu, amou, sofreu, venceu, lutou a luta do dia a dia. Com tecnologia ou sem ela. Com abundância ou escassez.</p>
+
+        <p>Com dificuldades, superações, gestos de bondade, atos de coragem, sacrifícios... com humanidade.</p>
+
+        <p>Ao longo desse caminho, o sopro Divino atravessou o tempo. Inspirou consciências. Manifestou-se na palavra, no silêncio e no coração daqueles que puderam sentir.</p>
+
+        <p>Nunca estivemos sós. E essa sabedoria não se perdeu. Foi transmitida de geração em geração, de muitas maneiras.</p>
+
+        <p>Algumas dessas manifestações tornaram-se religiões. Todas, à sua maneira, buscam expressar o Sagrado, a revelação da verdade imemorial.</p>
+
+        <p>Criaram símbolos. Compartilharam ensinamentos. Guiaram palavras. Deram forma ao invisível.</p>
+
+        <p>Algumas se tornaram culturas, atravessaram séculos, milênios, marcaram povos. Outras permanecem vivas na sensibilidade, na arte, na intuição.</p>
+
+        <p>Religare nasce nesse encontro.</p>
+
+        <p>É um gesto de respeito a todas as formas de manifestação do Divino. É um trabalho de (re)conexão. De tolerância. De lembrança. De respeito.</p>
+
+        <p>A lembrança de que a centelha de Deus — como quer que você O nomeie — habita em cada ser humano. E pode florescer.</p>
+
+        <p>Independentemente de crença, cultura ou caminho. É para todos, como a luz do sol.</p>
+
+        <p>Religare é design, arte, cultura, poesia e espiritualidade.</p>
+
+        <p>É uma tentativa de traduzir, em forma visual, aquilo que há de mais essencial: o que nos conecta.</p>
+
+        <p>Semear bons valores. Compartilhar o bem recebido. Unir. Tornar a vida — e o mundo — mais belos.</p>
+
+        <p>Que você receba isso com o mesmo amor com que está sendo criado.</p>
+      </div>
+    </article>
+
+
+  </main>
+
+  <footer id="contato" class="site-footer">
+    <div>
+      <img src="assets/marca_bottom.png" alt="Religare" />
+      <nav>
+        <a href="manifesto.html">manifesto</a>
+        <a href="#contato">contato</a>
+      </nav>
+    </div>
+    <div class="footer-copy">
+      <p>Religare é design, arte, cultura, poesia e espiritualidade. Um convite para reconhecer aquilo que nos conecta.</p>
+      <a class="button" href="index.html#top">conheça</a>
+    </div>
+    <a class="instagram" href="#">instagram</a>
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('main-nav');
+      if(!btn || !nav) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
+</body>
+</html>
