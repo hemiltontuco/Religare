@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Peças — Religare</title>
+  <meta name="description" content="As obras da Religare: peças autorais inspiradas em símbolos, ensinamentos e tradições espirituais, disponíveis em camiseta e quadro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="piece-page">
+  <header class="site-header">
+    <a class="brand" href="../index.html#top" aria-label="Religare — página inicial">
+      <img src="../assets/marca_topo.png" width="181" alt="Religare" />
+    </a>
+
+    <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Menu principal">
+      <a href="../index.html">HOME</a>
+      <a href="../manifesto.html">MANIFESTO</a>
+      <a href="index.html">PEÇAS</a>
+      <a href="../contato.html">CONTATO</a>
+    </nav>
+  </header>
+
+  <main id="top" class="pecas-index-main">
+    <section class="pecas-hero">
+      <p class="section-label">peças</p>
+      <h1 class="pecas-hero-title">As obras Religare</h1>
+      <div class="arts-line" aria-hidden="true"></div>
+      <p class="pecas-hero-sub">Cada peça nasce de um mergulho em símbolos, ensinamentos e tradições que acompanham a humanidade há séculos — uma tradução visual daquilo que permanece.</p>
+    </section>
+
+    <section class="pecas-grid-section" aria-label="Lista de obras">
+      <div class="pecas-grid">
+        <a class="pecas-card" href="amai-vos.html">
+          <div class="pecas-card-image">
+            <img src="../assets/peca-amai-vos-emblema.png" alt="Ilustração de um coração radiante, ladeado por ramos, com uma pequena cruz e uma estrela-guia acima — símbolo da obra Amai-vos." />
+          </div>
+          <div class="pecas-card-copy">
+            <p class="pecas-card-collection">Coleção "O Amor"</p>
+            <h2>Amai-vos</h2>
+            <p class="pecas-card-link">ver obra <span aria-hidden="true">→</span></p>
+          </div>
+        </a>
+
+        <a class="pecas-card" href="barco.html">
+          <div class="pecas-card-image">
+            <img src="../assets/peca-mente-emblema.png" alt="Ilustração de um pequeno barco atravessando águas ondulantes, guiado por um feixe de luz — símbolo da obra Barco." />
+          </div>
+          <div class="pecas-card-copy">
+            <p class="pecas-card-collection">Coleção "Mente"</p>
+            <h2>Barco</h2>
+            <p class="pecas-card-link">ver obra <span aria-hidden="true">→</span></p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <img src="../assets/marca_bottom.png" alt="Religare" />
+      <nav>
+        <a href="../manifesto.html">manifesto</a>
+        <a href="index.html" aria-current="page">peças</a>
+        <a href="../contato.html">contato</a>
+      </nav>
+    </div>
+    <div class="footer-contact">
+      <p>Religare é design, arte, cultura, poesia e espiritualidade. Um convite para reconhecer aquilo que nos conecta.</p>
+      <a class="instagram" href="#">instagram (em breve)</a>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('main-nav');
+      if(!btn || !nav) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
+</body>
+</html>

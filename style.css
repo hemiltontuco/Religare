@@ -1168,6 +1168,127 @@ html, body {
   text-underline-offset:3px;
 }
 
+/* vitrine de peças */
+.pecas-index-main{
+  overflow:visible;
+}
+
+.pecas-hero{
+  width:min(760px, calc(100% - 48px));
+  margin:0 auto;
+  padding:64px 24px 20px;
+  text-align:center;
+}
+
+.pecas-hero-title{
+  margin:18px 0 0;
+  font-family:'Roboto', var(--serif);
+  font-weight:200;
+  font-size:clamp(34px, 6.5vw, 44px);
+  line-height:1.05;
+  letter-spacing:.14em;
+  color:#1f1b18;
+  text-transform:none;
+}
+
+.pecas-hero-sub{
+  max-width:520px;
+  margin:20px auto 0;
+  color:#6b5d52;
+  font-size:15px;
+  line-height:1.7;
+}
+
+.pecas-grid-section{
+  width:min(920px, calc(100% - 48px));
+  margin:56px auto 96px;
+}
+
+.pecas-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+}
+
+.pecas-card{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  background:var(--paper);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.pecas-card:hover,
+.pecas-card:focus{
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(31,27,24,.12);
+}
+
+.pecas-card-image{
+  aspect-ratio:1;
+  overflow:hidden;
+}
+
+.pecas-card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.pecas-card-copy{
+  padding:26px 28px 30px;
+}
+
+.pecas-card-collection{
+  margin:0 0 10px;
+  color:var(--gold);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.pecas-card-copy h2{
+  margin:0;
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(22px, 3vw, 28px);
+  color:#1f1b18;
+  text-transform:lowercase;
+}
+
+.pecas-card-link{
+  margin:16px 0 0;
+  color:#6b5d52;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  transition:color .18s ease;
+}
+
+.pecas-card:hover .pecas-card-link,
+.pecas-card:focus .pecas-card-link{
+  color:var(--gold);
+}
+
+@media (max-width:760px){
+  .pecas-hero{
+    width:calc(100% - 40px);
+    padding:48px 20px 12px;
+  }
+
+  .pecas-grid-section{
+    width:calc(100% - 40px);
+    margin:44px auto 72px;
+  }
+
+  .pecas-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+}
+
 /* peças */
 .piece-page{
   background:#fff;
@@ -1199,8 +1320,16 @@ html, body {
 }
 
 .piece-emblem{
-  width:min(280px, 60vw);
+  max-width:100%;
   margin:0 auto 26px;
+}
+
+.piece-emblem--amai-vos{
+  width:428px;
+}
+
+.piece-emblem--barco{
+  width:592px;
 }
 
 .piece-title{
@@ -1361,7 +1490,25 @@ html, body {
 
 .piece-cta-wrap{
   text-align:center;
-  padding-top:8px;
+  padding:8px 0 64px;
+}
+
+.piece-closing{
+  margin-top:56px;
+  padding-top:44px;
+  border-top:1px solid var(--paper-2);
+  text-align:center;
+}
+
+.piece-closing p{
+  margin:0;
+  color:var(--gold);
+  font-family:'Lora', var(--serif);
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(19px, 2.6vw, 25px);
+  line-height:1.55;
+  letter-spacing:.02em;
 }
 
 .piece-cta{
@@ -1426,6 +1573,10 @@ html, body {
   .piece-hero{
     width:calc(100% - 40px);
     padding:48px 20px 38px;
+  }
+
+  .piece-emblem{
+    width:min(280px, 60vw);
   }
 
   .piece-content{
