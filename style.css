@@ -1206,7 +1206,7 @@ html, body {
 
 .pecas-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
   gap:32px;
 }
 
@@ -1323,6 +1323,7 @@ html, body {
 }
 
 .piece-emblem{
+  width:500px;
   max-width:100%;
   margin:0 auto 26px;
 }
@@ -1333,6 +1334,10 @@ html, body {
 
 .piece-emblem--barco{
   width:592px;
+}
+
+.piece-emblem--belaflor{
+  width:500px;
 }
 
 .piece-title{
