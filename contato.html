@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato — Religare</title>
+  <meta name="description" content="Entre em contato com a Religare. Vamos conversar sobre arte, design, cultura e espiritualidade." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500;600&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="contact-page">
+  <header class="site-header">
+    <a class="brand" href="index.html#top" aria-label="Religare — página inicial">
+      <img src="assets/marca_topo.png" width="181" alt="Religare" />
+    </a>
+
+    <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Menu principal">
+      <a href="index.html">HOME</a>
+      <a href="manifesto.html">MANIFESTO</a>
+      <a href="pecas/amai-vos.html">PEÇAS</a>
+    </nav>
+  </header>
+
+  <main id="top" class="contact-main">
+    <section class="contact-intro" aria-labelledby="contact-title">
+      <div class="contact-intro-copy">
+        <p class="section-label">contato</p>
+        <h1 id="contact-title">Toda conexão<br>começa com<br>um gesto.</h1>
+        <p class="contact-lead">Se uma ideia, uma pergunta ou uma possibilidade de parceria trouxe você até aqui, escreva para nós. Será um prazer iniciar essa conversa.</p>
+        <div class="contact-email">
+          <span>e-mail</span>
+          <a href="mailto:contato@religare.design">contato@religare.design</a>
+        </div>
+      </div>
+
+      <div class="contact-symbol" aria-hidden="true">
+        <span class="contact-orbit orbit-one"></span>
+        <span class="contact-orbit orbit-two"></span>
+        <span class="contact-sun"></span>
+        <p>o que nos conecta<br>também nos transforma</p>
+      </div>
+    </section>
+
+    <section class="contact-form-section" aria-labelledby="form-title">
+      <div class="form-heading">
+        <p class="eyebrow">vamos conversar</p>
+        <h2 id="form-title">Escreva sua mensagem</h2>
+        <p>Preencha os campos abaixo. Sua mensagem será enviada diretamente para a nossa equipe.</p>
+      </div>
+
+      <form id="contact-form" class="contact-form" action="https://formsubmit.co/ajax/contato@religare.design" method="POST">
+        <input type="hidden" name="_subject" value="Nova mensagem pelo site Religare" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Nome</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Como podemos chamar você?" required />
+          </div>
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="seu@email.com" required />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="subject">Assunto</label>
+          <input id="subject" name="subject" type="text" placeholder="Sobre o que você quer conversar?" required />
+        </div>
+
+        <div class="form-field">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" rows="7" placeholder="Compartilhe sua ideia, dúvida ou convite." required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="contact-submit" type="submit">enviar mensagem <span aria-hidden="true">→</span></button>
+          <p>Ou escreva diretamente para <a href="mailto:contato@religare.design">contato@religare.design</a></p>
+        </div>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <img src="assets/marca_bottom.png" alt="Religare" />
+      <nav>
+        <a href="manifesto.html">manifesto</a>
+        <a href="pecas/amai-vos.html">peças</a>
+        <a href="contato.html" aria-current="page">contato</a>
+      </nav>
+    </div>
+    <div class="footer-contact">
+      <p>Religare é design, arte, cultura, poesia e espiritualidade. Um convite para reconhecer aquilo que nos conecta.</p>
+      <a class="instagram" href="#">instagram (em breve)</a>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('main-nav');
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+
+      if(btn && nav){
+        btn.addEventListener('click', () => {
+          const open = nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        });
+      }
+
+      if(form){
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          if(!form.reportValidity()) return;
+
+          const submit = form.querySelector('button[type="submit"]');
+          const originalLabel = submit.innerHTML;
+          submit.disabled = true;
+          submit.textContent = 'enviando…';
+          status.className = 'form-status is-visible';
+          status.textContent = 'Enviando sua mensagem…';
+
+          try{
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+            const result = await response.json();
+
+            if(!response.ok || result.success === false){
+              throw new Error('Falha no envio');
+            }
+
+            form.reset();
+            status.className = 'form-status is-visible is-success';
+            status.textContent = 'Mensagem enviada. Obrigado por entrar em contato — responderemos em breve.';
+          }catch(error){
+            status.className = 'form-status is-visible is-error';
+            status.innerHTML = 'Não foi possível enviar agora. Tente novamente ou escreva para <a href="mailto:contato@religare.design">contato@religare.design</a>.';
+          }finally{
+            submit.disabled = false;
+            submit.innerHTML = originalLabel;
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
