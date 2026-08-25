@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A Ponte — Coleção "Amor" | Religare</title>
-  <meta name="description" content="A Ponte: uma reflexão sufi sobre o amor como travessia, inspirada em Rumi. Peça da Coleção 'Amor', disponível em camiseta e quadro, produzida artesanalmente pela Religare." />
+  <meta name="description" content="A Ponte: uma reflexão sufi sobre o amor como travessia, inspirada em Rumi. Peça da Coleção 'Amor', disponível em camiseta branca, vinho ou preta, produzida artesanalmente pela Religare." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -83,18 +83,17 @@
         <p>Esta obra também pode acompanhar o seu cotidiano.</p>
         <p>Algumas ideias pedem para permanecer apenas na contemplação.</p>
         <p>Outras podem caminhar conosco.</p>
-        <p>Por isso esta obra também existe em diferentes suportes, produzidos artesanalmente em pequenas quantidades.</p>
+        <p>Por isso esta obra também existe em camiseta, produzida artesanalmente em pequenas quantidades.</p>
       </div>
 
       <div class="piece-gallery">
-        <img src="../assets/obras_sufi_ponte.png" alt="Camiseta A Ponte nas cores areia e vinho, e quadro emoldurado em papel Marsala com a mesma obra." />
+        <img src="../assets/obras_sufi_ponte.png" alt="Camiseta A Ponte nas cores branca, vinho e preta." />
       </div>
 
       <div class="piece-craft">
         <h2>Cada peça nasce quando encontra seu destino</h2>
         <p>As primeiras obras do Religare não permanecem em estoque.</p>
         <p>Cada camiseta é confeccionada especialmente para quem a escolheu.</p>
-        <p>Cada quadro é montado individualmente.</p>
         <p>Gostamos da ideia de que algumas coisas merecem nascer apenas quando encontram seu lugar.</p>
       </div>
 
@@ -104,15 +103,8 @@
           <div class="piece-spec-group">
             <h3>Camiseta</h3>
             <p>Algodão premium</p>
-            <p>Areia · Vinho</p>
+            <p>Branca · Vinho · Preta</p>
             <p>P · M · G · GG</p>
-          </div>
-          <div class="piece-spec-group">
-            <h3>Quadro</h3>
-            <p>Papel Marsala</p>
-            <p>A4 · A3</p>
-            <p>Moldura branca</p>
-            <p>Paspatur branco</p>
           </div>
         </div>
       </div>
@@ -136,20 +128,15 @@
           <input type="hidden" name="Obra" value="A Ponte — Coleção Amor" />
           <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-          <fieldset class="form-field product-type-choice">
-            <legend>Produto de interesse</legend>
-            <div class="radio-row">
-              <label><input type="radio" name="Produto" value="Camiseta" checked /> Camiseta</label>
-              <label><input type="radio" name="Produto" value="Quadro" /> Quadro</label>
-            </div>
-          </fieldset>
+          <input type="hidden" name="Produto" value="Camiseta" />
 
-          <div class="form-row product-fields" data-product="Camiseta">
+          <div class="form-row">
             <div class="form-field">
               <label for="cor">Cor</label>
               <select id="cor" name="Cor" required>
-                <option value="Areia">Areia</option>
+                <option value="Branca">Branca</option>
                 <option value="Vinho">Vinho</option>
+                <option value="Preta">Preta</option>
               </select>
             </div>
             <div class="form-field">
@@ -161,14 +148,6 @@
                 <option value="GG">GG</option>
               </select>
             </div>
-          </div>
-
-          <div class="form-field product-fields" data-product="Quadro" hidden>
-            <label for="tamanho-quadro">Tamanho</label>
-            <select id="tamanho-quadro" name="Tamanho" disabled>
-              <option value="A4">A4</option>
-              <option value="A3">A3</option>
-            </select>
           </div>
 
           <div class="form-row">
@@ -202,7 +181,7 @@
       </section>
 
       <div class="piece-closing">
-        <p>Que esta obra encontre um lugar em você<br>antes de encontrar um lugar em sua casa.</p>
+        <p>Que esta obra lhe recorde que toda verdadeira busca<br>começa quando o coração aprende a escutar.</p>
       </div>
     </article>
   </main>
@@ -249,23 +228,6 @@
         });
       }
 
-      const productRadios = document.querySelectorAll('input[name="Produto"]');
-      const productFieldGroups = document.querySelectorAll('.product-fields');
-      function syncProductFields(){
-        const selected = document.querySelector('input[name="Produto"]:checked');
-        if(!selected) return;
-        productFieldGroups.forEach((group) => {
-          const matches = group.dataset.product === selected.value;
-          group.hidden = !matches;
-          group.querySelectorAll('select, input').forEach((field) => {
-            field.disabled = !matches;
-            if(matches) field.required = true;
-          });
-        });
-      }
-      productRadios.forEach((radio) => radio.addEventListener('change', syncProductFields));
-      syncProductFields();
-
       const form = document.getElementById('piece-order-form');
       const status = document.getElementById('piece-form-status');
       if(form){
@@ -293,7 +255,6 @@
             }
 
             form.reset();
-            syncProductFields();
             status.className = 'form-status is-visible is-success';
             status.textContent = 'Recebemos seu interesse! Em breve entraremos em contato para combinar os detalhes.';
           }catch(error){
