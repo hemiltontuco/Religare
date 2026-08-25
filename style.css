@@ -1392,6 +1392,10 @@ html, body {
   width:500px;
 }
 
+.piece-emblem--tempo{
+  width:500px;
+}
+
 .piece-title{
   margin:0;
   font-family:var(--serif);
