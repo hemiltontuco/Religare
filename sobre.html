@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre — Religare</title>
+  <meta name="description" content="A história por trás do Religare: um projeto de diplomação em Design que, mais de vinte anos depois, renasce como um convite à pausa, ao silêncio e à conexão com o essencial." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4" />
+</head>
+<body class="manifesto-page">
+  <header class="site-header">
+    <a class="brand" href="index.html#top" aria-label="Religare">
+      <img src="assets/marca_topo.png" width="181px" alt="Religare" />
+    </a>
+
+    <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Menu principal">
+      <a href="index.html">HOME</a>
+      <a href="manifesto.html">MANIFESTO</a>
+      <a href="pecas/index.html">PEÇAS</a>
+      <a href="contato.html">CONTATO</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <article class="manifesto-content sobre-content" aria-labelledby="sobre-title">
+      <p class="section-label">sobre</p>
+      <h2 id="sobre-title" class="manifesto-title">Um projeto que mora em mim</h2>
+      <div class="arts-line" aria-hidden="true"></div>
+
+      <div class="manifesto-body">
+        <p>Em 2005, concluí o curso superior de Design na Universidade de Brasília com um projeto de diplomação que nomeei Religare. Não era apenas um projeto acadêmico. Escolhi um tema que me motivava e também me gerava curiosidade positiva: pesquisar formas de expressão do Divino através do humano, ao longo de tempos imemoriais — respeitando o conteúdo e a forma que cada cultura, cada povo, soube dar a essa busca — e contribuir com o que um projeto de design pode oferecer com maestria: uma visão de conjunto, uma identidade visual.</p>
+
+        <p>Segui em frente. Por mais de vinte anos, o design foi o ofício das minhas mãos — moldando letras, símbolos, formas que passaram por muitas mesas, muitas vitrines, muitos olhares de pessoas que talvez eu nunca chegaria a conhecer. Aprendendo, projeto após projeto, a entender a inspiração que cada ideia pedia antes de desenhar a primeira linha.</p>
+
+        <p>E o tempo, generoso, foi deixando reconhecimentos pelo caminho — mas o que ele realmente me deixou foi um olhar treinado para enxergar o essencial, para saber o que tirar até sobrar só o que importa.</p>
+
+        <p>Segui também por caminhos digitais, aprendendo — hoje meu universo profissional transita entre a intensidade da tecnologia, da inteligência artificial, da gestão — e também o visual, em projetos editoriais, de design e audiovisuais.</p>
+
+        <p>Mas o Religare sempre permaneceu. Ficou guardado, como uma semente que espera sua estação.</p>
+
+        <p>Durante estes anos, minha companheira vez ou outra me lembrava: e o Religare? Ela foi — e é — peça fundamental nesse projeto, assim como é, há mais de 30 anos, parte fundamental da minha vida.</p>
+
+        <p>E talvez seja exatamente esse contraste que estou vivendo profissionalmente que o fez florescer de novo agora. Quanto mais perto estou da aceleração do mundo, mais sinto falta do seu oposto. Do silêncio. Da pausa. Do gesto simples de olhar para dentro.</p>
+
+        <p>Percebo que não sou o único — muitos sentem essa vontade de desacelerar, de voltar a se conectar: com o outro, com o que é essencial, com o Divino, qualquer que seja o nome que você dê a Ele.</p>
+
+        <p>O Religare renasce nesse encontro. Entre o que há de mais humano em nós e um mundo que corre depressa demais. Entre a técnica e o silêncio.</p>
+
+        <p>Hoje, criar cada peça é quase um exercício de respirar mais devagar. Um instante de escuta antes de qualquer traço, onde sinto a presença de Deus e desejo o que é de melhor pra todos que o projeto tocar.</p>
+
+        <p>E é esse instante que eu gostaria de oferecer a quem passar por aqui — mesmo que não leve nada consigo, além de um pouco mais de leveza, de paz.</p>
+
+        <p>Se este projeto puder ser uma gota de calma num oceano tão agitado, já terá cumprido seu propósito.</p>
+
+        <p>Somos, no fundo, irmãos numa mesma busca.</p>
+
+        <p>Boa viagem.</p>
+      </div>
+
+      <div class="sobre-signature">
+        <p class="sobre-signature-name">Tuco Moraes</p>
+        <p class="sobre-signature-role">fundador do Religare</p>
+      </div>
+    </article>
+  </main>
+
+  <footer id="contato" class="site-footer">
+    <div>
+      <img src="assets/marca_bottom.png" alt="Religare" />
+      <nav>
+        <a href="manifesto.html">manifesto</a>
+        <a href="pecas/index.html">peças</a>
+        <a href="contato.html">contato</a>
+      </nav>
+    </div>
+    <div class="footer-contact">
+      <p>Religare é design, arte, cultura, poesia e espiritualidade. Um convite para reconhecer aquilo que nos conecta.</p>
+      <a class="instagram" href="#">instagram (em breve)</a>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('main-nav');
+      if(!btn || !nav) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
+</body>
+</html>
