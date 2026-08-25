@@ -1388,6 +1388,10 @@ html, body {
   width:500px;
 }
 
+.piece-emblem--ponte{
+  width:500px;
+}
+
 .piece-title{
   margin:0;
   font-family:var(--serif);
