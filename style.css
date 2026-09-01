@@ -232,6 +232,23 @@ h1{
   margin-top: 56px !important;
 }
 
+.arts-links{
+  position:relative;
+  display:inline-block;
+  line-height:0;
+}
+
+.arts-link{
+  position:absolute;
+  top:0;
+  height:100%;
+  width:25%;
+}
+.arts-link:nth-of-type(1){ left:0; }
+.arts-link:nth-of-type(2){ left:25%; }
+.arts-link:nth-of-type(3){ left:50%; }
+.arts-link:nth-of-type(4){ left:75%; }
+
 .sun-fragment{
   width:100%;
   max-width:1120px;
@@ -492,6 +509,16 @@ h1{
   .arts-row{
     margin-top: 30px !important;
   }
+
+  .arts-link{
+    width:100%;
+    height:25%;
+    left:0 !important;
+  }
+  .arts-link:nth-of-type(1){ top:0; }
+  .arts-link:nth-of-type(2){ top:25%; }
+  .arts-link:nth-of-type(3){ top:50%; }
+  .arts-link:nth-of-type(4){ top:75%; }
 
   .floating-block{
     grid-template-columns:1fr;
