@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=8" />
+  <link rel="stylesheet" href="../style.css?v=9" />
 </head>
 <body class="piece-page">
   <header class="site-header">
@@ -226,6 +226,11 @@
     </div>
   </footer>
 
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" aria-label="Fechar imagem ampliada">&times;</button>
+    <img src="" alt="" />
+  </div>
+
   <script>
     (function(){
       const btn = document.querySelector('.menu-toggle');
@@ -234,6 +239,31 @@
         btn.addEventListener('click', () => {
           const open = nav.classList.toggle('open');
           btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      const galleryImg = document.querySelector('.piece-gallery img');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
+      const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+      function openLightbox(){
+        lightboxImg.src = galleryImg.src;
+        lightboxImg.alt = galleryImg.alt;
+        lightbox.removeAttribute('hidden');
+        document.body.classList.add('lightbox-open');
+      }
+      function closeLightbox(){
+        lightbox.setAttribute('hidden', '');
+        document.body.classList.remove('lightbox-open');
+      }
+      if(galleryImg && lightbox && lightboxImg && lightboxClose){
+        galleryImg.addEventListener('click', openLightbox);
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+          if(event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (event) => {
+          if(event.key === 'Escape' && !lightbox.hasAttribute('hidden')) closeLightbox();
         });
       }
 

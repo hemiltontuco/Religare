@@ -1520,6 +1520,54 @@ html, body {
   width:100%;
   height:auto;
   object-fit:contain;
+  cursor:zoom-in;
+}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  background:rgba(20,16,14,.92);
+}
+
+.lightbox[hidden]{
+  display:none;
+}
+
+.lightbox img{
+  max-width:100%;
+  max-height:100%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.lightbox-close{
+  position:absolute;
+  top:20px;
+  right:24px;
+  width:44px;
+  height:44px;
+  border:none;
+  border-radius:50%;
+  background:rgba(255,255,255,.1);
+  color:#fff;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.lightbox-close:hover{
+  background:rgba(255,255,255,.2);
+}
+
+body.lightbox-open{
+  overflow:hidden;
 }
 
 .piece-craft{
@@ -1677,6 +1725,15 @@ html, body {
 
   .piece-gallery{
     margin-bottom:48px;
+  }
+
+  .lightbox{
+    padding:16px;
+  }
+
+  .lightbox-close{
+    top:12px;
+    right:12px;
   }
 
   .piece-specs-grid{
