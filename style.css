@@ -482,9 +482,15 @@ h1{
 }
 
 .instagram{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
   margin-top:28px;
   font-weight:600;
+}
+
+.instagram svg{
+  flex-shrink:0;
 }
 
 @media (max-width:760px){
